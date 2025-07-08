@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}탐지 로그{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="logs-section">
+        <h2>탐지 이력</h2>
+
+        <div class="table-container">
+            <table class="logs-table">
+                <thead>
+                    <tr>
+                        <th>날짜</th>
+                        <th>파일명</th>
+                        <th>객체 종류</th>
+                        <th>경고 여부</th>
+                        <th>상세</th>
+                    </tr>
+                </thead>
+                <tbody id="logsTableBody">
+                    <tr>
+                        <td>2024-01-15 14:30:22</td>
+                        <td>image_001.jpg</td>
+                        <td>사람</td>
+                        <td><span class="status-safe">안전</span></td>
+                        <td>3명 탐지</td>
+                    </tr>
+                    <tr>
+                        <td>2024-01-15 14:28:15</td>
+                        <td>video_002.mp4</td>
+                        <td>차량</td>
+                        <td><span class="status-warning">경고</span></td>
+                        <td>위험 차량 탐지</td>
+                    </tr>
+                    <tr>
+                        <td>2024-01-15 14:25:03</td>
+                        <td>image_003.png</td>
+                        <td>동물</td>
+                        <td><span class="status-safe">안전</span></td>
+                        <td>고양이 1마리</td>
+                    </tr>
+                    <tr>
+                        <td>2024-01-15 14:22:41</td>
+                        <td>video_001.mp4</td>
+                        <td>화재</td>
+                        <td><span class="status-danger">위험</span></td>
+                        <td>연기 탐지</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

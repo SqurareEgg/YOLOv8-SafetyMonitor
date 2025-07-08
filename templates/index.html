@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}실시간 탐지 - 산업현장 안전 감지 시스템{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5>실시간 영상 스트리밍</h5>
+                <div>
+                    <button id="startBtn" class="btn btn-success btn-sm">시작</button>
+                    <button id="stopBtn" class="btn btn-danger btn-sm">중지</button>
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <img id="videoFeed" src="{{ url_for('video_feed') }}" class="img-fluid" alt="실시간 영상" style="max-width: 100%; height: auto;">
+                <div id="streamStatus" class="mt-2">
+                    <span class="badge bg-success">연결됨</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <h5>실시간 탐지 로그</h5>
+            </div>
+            <div class="card-body">
+                <div id="logContainer" class="log-container"></div>
+            </div>
+        </div>
+        
+        <div class="card mt-3">
+            <div class="card-header">
+                <h5>탐지 통계</h5>
+            </div>
+            <div class="card-body">
+                <div id="statsContainer">
+                    <div class="row text-center">
+                        <div class="col-6">
+                            <div class="stat-item">
+                                <span class="stat-number" id="personCount">0</span>
+                                <span class="stat-label">사람</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-item">
+                                <span class="stat-number" id="vehicleCount">0</span>
+                                <span class="stat-label">차량</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/stream.js') }}"></script>
+<script src="{{ url_for('static', filename='js/log.js') }}"></script>
+{% endblock %}

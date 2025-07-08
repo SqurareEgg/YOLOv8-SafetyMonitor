@@ -1,0 +1,168 @@
+{% extends "layout.html" %}
+
+{% block title %}설정 - 산업현장 안전 감지 시스템{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>탐지 임계값 설정</h5>
+            </div>
+            <div class="card-body">
+                <form id="thresholdForm">
+                    <div class="mb-3">
+                        <label for="confidenceThreshold" class="form-label">신뢰도 임계값</label>
+                        <input type="range" class="form-range" id="confidenceThreshold" min="0.1" max="1.0" step="0.05" value="0.5">
+                        <div class="d-flex justify-content-between">
+                            <span>0.1</span>
+                            <span id="confidenceValue">0.5</span>
+                            <span>1.0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="helmetThreshold" class="form-label">헬멧 탐지 임계값</label>
+                        <input type="range" class="form-range" id="helmetThreshold" min="0.1" max="1.0" step="0.05" value="0.3">
+                        <div class="d-flex justify-content-between">
+                            <span>0.1</span>
+                            <span id="helmetValue">0.3</span>
+                            <span>1.0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="vestThreshold" class="form-label">조끼 탐지 임계값</label>
+                        <input type="range" class="form-range" id="vestThreshold" min="0.1" max="1.0" step="0.05" value="0.3">
+                        <div class="d-flex justify-content-between">
+                            <span>0.1</span>
+                            <span id="vestValue">0.3</span>
+                            <span>1.0</span>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">설정 저장</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>경고 설정</h5>
+            </div>
+            <div class="card-body">
+                <form id="alertForm">
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="enableAlerts" checked>
+                            <label class="form-check-label" for="enableAlerts">
+                                경고 알림 활성화
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="enableSound" checked>
+                            <label class="form-check-label" for="enableSound">
+                                경고 사운드 활성화
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="alertVolume" class="form-label">경고 음량</label>
+                        <input type="range" class="form-range" id="alertVolume" min="0" max="1" step="0.1" value="0.7">
+                        <div class="d-flex justify-content-between">
+                            <span>무음</span>
+                            <span id="volumeValue">70%</span>
+                            <span>최대</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="alertDuration" class="form-label">경고 표시 시간 (초)</label>
+                        <select class="form-select" id="alertDuration">
+                            <option value="3">3초</option>
+                            <option value="5" selected>5초</option>
+                            <option value="10">10초</option>
+                            <option value="0">수동 닫기</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">설정 저장</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="card mt-3">
+            <div class="card-header">
+                <h5>카메라 설정</h5>
+            </div>
+            <div class="card-body">
+                <form id="cameraForm">
+                    <div class="mb-3">
+                        <label for="cameraSource" class="form-label">카메라 소스</label>
+                        <select class="form-select" id="cameraSource">
+                            <option value="0" selected>기본 웹캠</option>
+                            <option value="rtsp">RTSP 스트림</option>
+                            <option value="file">파일 입력</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3" id="rtspUrlGroup" style="display: none;">
+                        <label for="rtspUrl" class="form-label">RTSP URL</label>
+                        <input type="url" class="form-control" id="rtspUrl" placeholder="rtsp://192.168.1.100:554/stream">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">설정 저장</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>시스템 상태</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <div class="fw-bold">모델 상태</div>
+                            <span id="modelStatus" class="badge bg-success">정상</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <div class="fw-bold">카메라 상태</div>
+                            <span id="cameraStatus" class="badge bg-success">연결됨</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <div class="fw-bold">처리 속도</div>
+                            <span id="processingSpeed">15.2 FPS</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <div class="fw-bold">메모리 사용량</div>
+                            <span id="memoryUsage">45%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/settings.js') }}"></script>
+{% endblock %}
