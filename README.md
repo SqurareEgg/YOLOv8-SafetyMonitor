@@ -1,4 +1,4 @@
-# 📌 포트폴리오 요약
+# 📌 요약
 
 - **기간**: 2025년 ICT 한이음 드림업 공식 등록 기간 2025.4.1~10.31 (실제 개발은 5월 말~7월 초에 집중, 2025-07-08 최종 업로드)
 - **인원**: 대학생 멘티 3명 + ICT 멘토 1명(가양전자)
@@ -49,3 +49,25 @@ python app.py
 
 - 2025 ICT 한이음 드림업 창의도전형 프로그램을 특별한 수상 없이 수료했습니다.
 - 대학 1학년 때 처음 참여한 외부 지원사업 팀 프로젝트로, YOLO 모델 학습·추론 파이프라인을 처음부터 직접 다뤄본 경험이었습니다. 동시에 GPU 없이 커스텀 모델을 학습하는 것이 얼마나 시간이 많이 드는 작업인지, 화려하게 설계한 문서와 실제로 동작하는 결과물 사이에 얼마나 큰 간극이 생길 수 있는지를 체감했습니다.
+
+<img width="1280" height="720" alt="슬라이드1" src="https://github.com/user-attachments/assets/03d47f10-debf-47de-b87e-d5bb16b24547" />
+
+<img width="1280" height="720" alt="슬라이드2" src="https://github.com/user-attachments/assets/e493e3b1-b138-4ae5-b90b-f159e5038cdc" />
+
+<img width="1280" height="720" alt="슬라이드3" src="https://github.com/user-attachments/assets/28550713-ce1d-474f-8300-39b97b37e80f" />
+
+<img width="1280" height="720" alt="슬라이드4" src="https://github.com/user-attachments/assets/adc6ef39-15c1-493d-9141-f4dde30b6a6d" />
+
+<img width="1280" height="720" alt="슬라이드5" src="https://github.com/user-attachments/assets/4361259e-3057-42f0-b34a-c378e2cd18b2" />
+
+<img width="1280" height="720" alt="슬라이드6" src="https://github.com/user-attachments/assets/b95c49c4-1a97-4ae1-af19-fad4531d4c4a" />
+
+<img width="1280" height="720" alt="슬라이드7" src="https://github.com/user-attachments/assets/d82633bf-5379-40fc-b818-0c4092945ff3" />
+
+<img width="1280" height="720" alt="슬라이드8" src="https://github.com/user-attachments/assets/24de3287-150a-40c5-bc8d-71b140f94382" />
+
+<img width="1280" height="720" alt="슬라이드9" src="https://github.com/user-attachments/assets/23077aba-edaa-42b7-bb66-bf5675d840ee" />
+
+<img width="1280" height="720" alt="슬라이드10" src="https://github.com/user-attachments/assets/f3b51311-e417-4b86-ae59-380098b661f9" />
+
+<img width="1280" height="720" alt="슬라이드11" src="https://github.com/user-attachments/assets/397fb447-9c28-4c08-b7a7-7916ed47b9f8" />
